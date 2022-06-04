@@ -30,6 +30,10 @@ jobs:
           coverage report -m
           coverage xml -i
 
+      - name: fix code coverage paths
+        run: |
+          sed -i 's/\/home\/runner\/work\/devopslab\/devopslab\//\/github\/workspace\//g' cover/coverage.xml
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
