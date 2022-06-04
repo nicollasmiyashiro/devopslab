@@ -32,6 +32,7 @@ jobs:
 
       - name: fix code coverage paths
         run: |
+          ls -R
           sed -i 's/\/home\/runner\/work\/devopslab\/devopslab\//\/github\/workspace\//g' cover/coverage.xml
 
       - name: SonarCloud Scan
